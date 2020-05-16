@@ -1,5 +1,5 @@
 const getUser = function(){
-    return localStorage.getItem('curr');
+    return localStorage.getItem('cur');
 } 
 
 const getStoredPosts = function(){
@@ -34,11 +34,11 @@ const removePost = function(id){
 
 const renderAllPosts = function(){
     document.querySelector('.posts').innerHTML = '';
+    document.querySelector('.post-title').innerHTML = '';
     let posts = getStoredPosts();
     const title = document.createElement('h4');
     title.textContent = "Posts history :";
-    title.className = 'post-title';
-    document.querySelector('.posts').appendChild(title);
+    document.querySelector('.post-title').appendChild(title);
     posts.forEach((onePost)=>{
         let oneDom = generateOneDom(onePost);
         document.querySelector('.posts').appendChild(oneDom);
@@ -47,16 +47,16 @@ const renderAllPosts = function(){
 
 const renderOnePost = function(onePost){
     const title = document.createElement('h4');
-    title.textContent = "Here is the result";
-    title.className = 'post-title';
+    title.textContent = "You post here";
+    document.querySelector('.post-title').appendChild(title);
     const oneDom = generateOneDom(onePost);
-    document.querySelector('.posts').appendChild(title);
     document.querySelector('.posts').appendChild(oneDom);
 }
 
 const generateOneDom = function(onePost){
-    let post = document.createElement('div')
-    let text = document.createElement('label')
+    let post = document.createElement('div');
+    let text = document.createElement('p');
+    text.className = 'post-content';
     let button = document.createElement('button')
     button.className = 'post-button';
     button.textContent = 'x'
@@ -66,7 +66,7 @@ const generateOneDom = function(onePost){
         renderAllPosts();
     })
 
-    text.textContent = `${onePost.date} -- ${onePost.content}$`;
+    text.textContent = `${onePost.date} -- ${onePost.content}`;
     post.appendChild(text);
     post.className = 'one-post';
     return post;
@@ -79,6 +79,7 @@ const getTime = function(){
 
 document.querySelector('.post-submit').addEventListener('click',(e)=>{
     e.preventDefault();
+    document.querySelector('.post-title').innerHTML = '';
     document.querySelector('.posts').innerHTML = '';
     createOnePost();
 })

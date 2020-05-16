@@ -1,46 +1,56 @@
 <html>
-    <header>
-        <link href="https://fonts.googleapis.com/css2?family=Balsamiq+Sans&display=swap" rel="stylesheet">
-        <meta name="viewport" content="width=device-width,initial-scale = 1.0"> 
-        <link href="style.css" type="text/css" rel="stylesheet">
-    </header>
-    <title>
-        436 a1 chatapp
-    </title>
-    <body class="post-page">
-        <div class="header">
-            <h1 class="header-title">Chatting Website </h1>
-            <h3 class= "header-subtitle">--Chaoyu Xinag</h3>
-        </div>
-        <div class="menu">
-            <a class="login-page" href="index.html">Login Page</a>
-            <a class="post-history" href="#" onclick="renderAllPosts()">Post History</a>
-        </div>
-        <div class="post">
-            <textarea type="text" class="user-post" placeholder="How's your life today.."></textarea>
-            <div class="state">
-                <p>How are you feeling ?</p>
-                <div class="user-state">
-                    <input type="checkbox" id="happy">
-                    <label for="happy"></label>
-                </div>
-                <div class="user-state">
-                    <input type="checkbox" id="boring">
-                    <label for="boring"></label>
-                </div>
-                <div class="user-state">
-                    <input type="checkbox" id="sad">
-                    <label for="sad"></label>
-                </div>                     
-                </div>   
+<header>
+    <link href="https://fonts.googleapis.com/css2?family=Balsamiq+Sans&display=swap" rel="stylesheet">
+    <meta name="viewport" content="width=device-width,initial-scale = 1.0">
+    <link href="style.css" type="text/css" rel="stylesheet">
+</header>
+<title>
+    436 a1 chatapp
+</title>
+
+<body class="post-page">
+    <div class="header">
+        <h1 class="header-title">Chatting Website </h1>
+        <h3 class="header-subtitle">--Chaoyu Xinag</h3>
+    </div>
+    <script src="userInfo.js"></script>
+    <div class="menu">
+        <a class="login-page" href="index.html">Login Page</a>
+        <p id="user" style="display:inline"></p>
+        <script>loadUser()</script>
+        <a class="post-history" href="#" onclick="renderAllPosts()">Post History</a>
+    </div>
+    <div class="post left">
+        <textarea type="text" class="user-post" placeholder="How's your life today.."></textarea>
+        <div class="state">
+            <p>How are you feeling ?</p>
+            <div class="user-state">
+                <input type="checkbox" id="happy">
+                <label for="happy"></label>
             </div>
-            <div class="submit">
-                <button class="post-submit">Submit</button>
+            <div class="user-state">
+                <input type="checkbox" id="boring">
+                <label for="boring"></label>
             </div>
-            
+            <div class="user-state">
+                <input type="checkbox" id="sad">
+                <label for="sad"></label>
+            </div>
         </div>
+        <div class="submit">
+            <button class="post-submit">Submit</button>
+        </div>
+    </div>
+    <script src="postHandler.js"></script>
+    <script src="uuidGen.js"></script>
+
+    </div>
+    <div class="right">
+        <div class="post-title"></div>
         <div class="posts"></div>
-        <script src="uuidGen.js"></script>
-        <script src="postHandler.js"></script>
-    </body>
+    </div>
+    <script src="uuidGen.js"></script>
+    <script src="postHandler.js"></script>
+</body>
+
 </html>

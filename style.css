@@ -92,11 +92,11 @@ button {
     height: 8%;
     margin: 5%;
     margin-left: 25%;
-    border-radius: 2vw;
+    border-radius: 1vw;
     
 }
 
-a {
+a{
     color: rgb(197, 122, 37);
     font-size: 1em;
     margin: 3%;
@@ -106,13 +106,16 @@ a {
     box-sizing: inline-block;
     width: 100%;
 }
+
+#user{
+    font-size: 1em;
+    margin-left: 0;
+}
+
 a:hover{
     color: antiquewhite;
 }
-.submit{
-    width: 100%;
-    margin: 0;
-}
+
 .post-submit{
     width:40%;
     height: 3%;
@@ -125,8 +128,32 @@ a:hover{
   align-items: center;
   height: 3vh;
 }
+
 input[type = checkbox] {
     display: none;
+}
+
+.post-title {
+    font-size: 1.2em;
+    padding-left: 0.4em;
+    margin: .4rem
+}
+
+.one-post {
+    word-wrap: break-word; 
+    width: 80%;;
+    border-radius: 15px;
+    text-align: left;
+    color: rgb(247, 240, 152);
+    background-color:rgb(32, 31, 31);
+    margin: 0.5rem 10%;
+    display: block;
+    transition: background .3s ease;
+}
+
+.post-content{
+    padding: 0.8em;
+    font-size: 1em;
 }
 
 input + label {
@@ -167,6 +194,12 @@ input:checked + label{
 
 .post-button{
     width: 10%;
+    margin :0.5em;
+}
+
+.posts{
+    height: 50%;
+    overflow: scroll;
 }
 
 @media (min-width : 600px){
@@ -187,10 +220,10 @@ input:checked + label{
         font-size: 1.5em;
         padding: 3%;
     }
-    .input,button{
+    input,button{
         font-size: 1em;
         margin: 3%;
-        height: 2em;
+        height: 2.5em;
     }
     button{
         margin-bottom: 10%;
@@ -200,13 +233,36 @@ input:checked + label{
     }
     .user-post{
         font-size: 1em;
-        height: 10%;
+        height: 15%;
         margin-top: 2%;
         margin-bottom: 2%;
+        margin-left: 10%;
+        width : 80%
     }
     .post-submit{
-        width: 30%;
+        width: 40%;
         height: 5%;
-        margin-left:35% ;
+    }
+
+    #user{
+        font-size: 1.4em
+    }
+
+
+    .left {
+    left: 0;
+    position: absolute;
+    height: 100%;
+    margin-top: 5%;
+    width: 50%;
+    }
+
+    .right {
+        margin-top: 5%;
+        right: 0;
+        position: absolute;
+        height: 100%;
+        width: 50%;
+        right: 0;
     }
 }
