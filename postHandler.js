@@ -115,6 +115,20 @@ document.querySelector('.post-submit').addEventListener('click',(e)=>{
     document.querySelector('.post-title').innerHTML = '';
     document.querySelector('.posts').innerHTML = '';
     createOnePost();
-    getState();
+    clearForm();
 })
+
+document.querySelector('.post-clear').addEventListener('click',(e)=>{
+    e.preventDefault();
+    clearForm();
+});
+
+const clearForm = function(){
+    document.querySelector('.user-post').value = '';
+    let states = document.querySelectorAll('.user-state');
+    states.forEach((oneState)=>{
+        oneState.children[0].checked = false;
+    })
+}
+
 
