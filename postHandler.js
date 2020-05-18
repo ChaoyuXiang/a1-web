@@ -12,7 +12,8 @@ const createOnePost = function(){
     let posts = getStoredPosts();
     let onePost = {
         content: document.querySelector('.user-post').value,
-        id:uuidv4(),
+        id:Date.now(),
+        state: getState(),
         date : getTime()
     };
     posts.push(onePost);
@@ -60,10 +61,16 @@ const generateOneDom = function(onePost){
     let button = document.createElement('button')
     button.className = 'post-button';
     button.textContent = 'x'
-    post.appendChild(button)
+    post.appendChild(button);
     button.addEventListener('click', function () {
         removePost(onePost.id);
         renderAllPosts();
+    })
+    onePost.state.forEach((oneState)=>{
+        let oneEmoji = document.createElement('label');
+        oneEmoji.textContent = emojiState(oneState);
+        oneEmoji.className = 'emoji'
+        post.appendChild(oneEmoji);
     })
 
     text.textContent = `${onePost.date} -- ${onePost.content}`;
@@ -77,9 +84,37 @@ const getTime = function(){
     return `${date.getFullYear()}-${date.getMonth()+1}-${date.getDate()}`;
 }
 
+const getState = function(){
+    let allStates = document.querySelectorAll('.user-state');
+    let result = [];
+    for(let i =0;i<allStates.length;i++) {
+        if(allStates[i].children[0].checked) {
+            result.push(allStates[i].children[0].id);
+        }
+    }
+    return result;
+}
+
+const emojiState = function(state){
+    switch(state){
+        case 'happy' : 
+            return "😄";
+            break;
+        case 'boring' : 
+             return "🥱";
+             break;
+        case 'sad' :
+             return "😟"
+             break;
+
+    }
+}
+
 document.querySelector('.post-submit').addEventListener('click',(e)=>{
     e.preventDefault();
     document.querySelector('.post-title').innerHTML = '';
     document.querySelector('.posts').innerHTML = '';
     createOnePost();
+    getState();
 })
+
