@@ -16,12 +16,16 @@
     </div>
     <script src="userInfo.js"></script>
     <div class="menu">
-        <a class="login-page" href="index.html">Login Page</a>
         <p id="user" style="display:inline"></p>
-        <script>loadUser()</script>
+        <br>
+        <a class="login-page" href="index.html">Login Page</a>
+        <a class="aboutme-page" href="aboutMe.html">About me</a>
         <a class="post-history" href="#" onclick="renderAllPosts()">Post History</a>
+       
+        <script>loadUser()</script>
     </div>
     <div class="post left">
+        <form>
         <textarea type="text" class="user-post" placeholder="How's your life today.."></textarea>
         <div class="state">
             <p>How are you feeling ?</p>
@@ -42,6 +46,7 @@
             <button class="post-submit">Submit</button>
             <button class="post-clear">Clear</button>
         </div>
+    </form>
     </div>
     </div>
     <div class="right">
@@ -51,7 +56,6 @@
 
     <footer class="site-footer" role="contentinfo">
         <div class="about-me">
-            <h3>-About me💁🏻‍♂️-</h3>
             <ul>
                 <li>
                     <a href="https://github.com/ChaoyuXiang" target="_blank"><img src="image/github.png" alt="github Logo" class="gh-icon">

@@ -1,27 +1,38 @@
 <html>
 
 <head>
-    <meta name="viewport" content="width=device-width,initial-scale = 1.0"> 
+    <meta name="viewport" content="width=device-width,initial-scale = 1.0">
     <link href="https://fonts.googleapis.com/css2?family=Balsamiq+Sans&display=swap" rel="stylesheet">
     <link href="style.css" rel="stylesheet">
+    <link href="aboutMe.css" rel="stylesheet">
 </head>
 <title>Postagram</title>
+
 <body>
     <div class="header">
-            <h1 class="header-title">Start your Postagram 🤳🏼</h2>
+        <h1 class="header-title">Start your Postagram 🤳🏼</h2>
             <h2 class="header-subtitle">--Chaoyu Xiang</h2>
     </div>
-    <div class="main">
-        <h3 class="subtitle">👇Start here👇</h3>
-        <input id="user-id" placeholder="id here">
-        <br>
-        <button id="id-submit" class="button">Start here !</button>
+    <script src="userInfo.js"></script>
+    <div class="menu">
+        <a class="login-page" href="index.html">Login Page</a>
+        <p id="user" style="display:inline"></p>
+        <a class="post-page" href="post.html">Post page</a>
+        <script>loadUser()</script>
+    </div>
+    <div class="intro">
+        <p>Hi, I'm Chaoyu. I’m currently taking second degree pragma in computer science since at UBC September in 2019.
+            I was previously majored in materials engineering.</p>
+        <p>I hope you can love my postagram project !  Please feel free to find on Github, LinkedIn, Facebook and
+            Instagram! 😊</p>
+        <img src="image/me.JPG">
     </div>
     <footer class="site-footer" role="contentinfo">
         <div class="about-me">
             <ul>
                 <li>
-                    <a href="https://github.com/ChaoyuXiang" target="_blank"><img src="image/github.png" alt="github Logo" class="gh-icon">
+                    <a href="https://github.com/ChaoyuXiang" target="_blank"><img src="image/github.png"
+                            alt="github Logo" class="gh-icon">
                     </a>
                 </li>
                 <li>
@@ -39,7 +50,6 @@
             </ul>
         </div>
     </footer>
-    <script src="redirect.js"></script>
 </body>
 
 </html>

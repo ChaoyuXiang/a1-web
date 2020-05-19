@@ -1,0 +1,39 @@
+.menu{
+    text-align: center;
+    box-sizing: inline-block;
+    width: 100%;
+}
+
+.login-page,.post-page{
+    color: rgb(197, 122, 37);
+    font-size: 1em;
+    margin: 3%;
+    text-align: left;
+}
+p{
+    margin: 5%;
+
+    font-size: 16px;
+}
+
+img{
+    width: 80%;
+    margin-left: 10%;
+}
+
+@media (min-width :600px){
+    .login-page,.post-page{
+        font-size: 1.2em;
+        margin: 3%;
+        text-align: left;
+    }
+    p{
+        margin: 2%;
+        font-size: 1.4em;
+    }
+    
+    img{
+        width: 30%;
+        margin-left: 35%;
+    }
+}
